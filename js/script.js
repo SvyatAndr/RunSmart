@@ -17,7 +17,6 @@
 // 	});
 // });
 
-
 const slider = tns({
 	container: '.carousel__inner',
 	items: 1,
@@ -76,3 +75,35 @@ $('.button-mini').each(function (i) {
 		$('.overlay, #order').fadeIn('slow');
 	});
 });
+
+
+function valideFroms(form) {
+	$(form).validate({
+		rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			phone: "required",
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			name: {
+				required:"Пожалуйста, укажите ваше имя",
+				minlength: jQuery.validator.format("Требуется не менее {0} символов!")
+			},
+			phone: "Пожалуйста, укажите ваш телефон",
+			email: {
+			required: "Пожалуйста, укажите вашe почту",
+			email: "Ваш адрес электронной почты должен быть в формате name@gmail.com"
+			}
+		}
+	});
+	
+}
+	valideFroms('#consultation-form');
+	valideFroms('#consultation form');
+	valideFroms('#order form');
