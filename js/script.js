@@ -107,3 +107,5 @@ function valideFroms(form) {
 	valideFroms('#consultation-form');
 	valideFroms('#consultation form');
 	valideFroms('#order form');
+	
+	$('input[name=phone]').mask("+1 (999) 999-99-99");
